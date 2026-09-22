@@ -1,0 +1,141 @@
+/* PCBPad — il sito. Un foglio solo per le tre pagine, perché tre copie divergerebbero.
+   Nessun font esterno e nessuna richiesta a terzi: una pagina che dice «nothing leaves your
+   device» non chiama Google Fonts. I colori vengono dall'app (Tavolozza.accento, fondoScuro). */
+
+:root {
+  --ground: #f3f4f5;
+  --surface: #ffffff;
+  --ink: #16181b;
+  --muted: #555c63;
+  --rule: #d9dcdf;
+  --accent: #1f6ea6;
+  --board: #1d2a24;
+  --board-dot: #2f4238;
+  --copper: #c8834a;
+  --copper-other: #9aa7b0;
+  --hand: #e8e2d6;
+  --pad: #d9a36a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #141517;
+    --surface: #1c1e21;
+    --ink: #e6e8ea;
+    --muted: #9aa1a8;
+    --rule: #2c3035;
+    --accent: #66b3eb;
+    --board: #17221d;
+    --board-dot: #2a3a32;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #141517;
+  --surface: #1c1e21;
+  --ink: #e6e8ea;
+  --muted: #9aa1a8;
+  --rule: #2c3035;
+  --accent: #66b3eb;
+  --board: #17221d;
+  --board-dot: #2a3a32;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.55 system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  padding-inline: 20px;
+  padding-block: 0;
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+.mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.88em; }
+
+header.site {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 22px; border-bottom: 1px solid var(--rule);
+}
+header.site a.brand { color: var(--ink); text-decoration: none; font-weight: 650; letter-spacing: -0.01em; }
+header.site nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; margin: 48px 0 16px; }
+h2 { font-size: 24px; font-weight: 650; margin: 56px 0 12px; }
+h3 { font-size: 17px; font-weight: 650; margin: 0 0 6px; letter-spacing: -0.01em; }
+p, li { max-width: 65ch; }
+.lede { font-size: 20px; color: var(--muted); margin: 0 0 28px; }
+.label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 8px;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 8px; }
+.button {
+  display: inline-block; padding: 11px 18px; border-radius: 8px; font-weight: 600;
+  text-decoration: none; border: 1px solid var(--rule); color: var(--ink); background: var(--surface);
+}
+.button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .button.primary { color: #0e1113; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .button.primary { color: #0e1113; } }
+.fine { font-size: 14px; color: var(--muted); }
+
+/* La figura: il tratto della mano e la pista che ne esce. */
+figure.route { margin: 40px 0 8px; }
+figure.route .plate {
+  background: var(--board); border-radius: 10px; overflow: hidden;
+  max-width: 100%;
+}
+figure.route svg { display: block; width: 100%; height: auto; }
+figure.route figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 8px; font-size: 14px; color: var(--muted); }
+.legend span::before {
+  content: ""; display: inline-block; width: 18px; height: 0; vertical-align: middle;
+  margin-right: 8px; border-top: 3px solid currentColor;
+}
+.legend .l-hand::before { border-top-style: dashed; color: var(--muted); }
+.legend .l-copper::before { color: var(--copper); }
+.legend .l-moved::before { color: var(--copper-other); }
+
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
+@media (max-width: 720px) { .three { grid-template-columns: 1fr; gap: 20px; } }
+.three p { margin: 0; color: var(--muted); font-size: 16px; }
+
+ul.plain { padding-left: 1.1em; }
+ul.plain li { margin: 6px 0; }
+.columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 32px; }
+@media (max-width: 720px) { .columns { grid-template-columns: 1fr; } }
+.columns h3 { margin-top: 18px; }
+
+.note {
+  border-left: 3px solid var(--rule); padding: 2px 0 2px 16px; color: var(--muted);
+  margin: 20px 0;
+}
+.it { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 8px; }
+
+dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; }
+@media (max-width: 520px) { dl.facts { grid-template-columns: 1fr; gap: 0; } dl.facts dd { margin-bottom: 10px; } }
+dl.facts dt { font-weight: 600; }
+dl.facts dd { margin: 0; color: var(--muted); }
+
+footer.site {
+  margin-top: 72px; padding-block: 24px 40px; border-top: 1px solid var(--rule);
+  font-size: 14px; color: var(--muted);
+}
+footer.site p { margin: 6px 0; max-width: none; }
+footer.site nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
+
+/* I tratti della figura: la tavola è scura in tutti e due i temi, quindi i colori del rame
+   non cambiano col tema. */
+.fig-dot { fill: var(--board-dot); }
+.fig-pad { fill: var(--pad); }
+.fig-hand { fill: none; stroke: var(--hand); stroke-width: 2.5; stroke-dasharray: 7 6; stroke-linecap: round; }
+.fig-track { fill: none; stroke: var(--copper); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.fig-moved { fill: none; stroke: var(--copper-other); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.fig-ghost { fill: none; stroke: var(--copper-other); stroke-width: 2; stroke-dasharray: 4 5; opacity: 0.6; }
+.fig-via { fill: var(--board); stroke: var(--copper-other); stroke-width: 5; }

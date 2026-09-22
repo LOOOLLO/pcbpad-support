@@ -1,16 +1,13 @@
-# PCBPad — Support
+# PCBPad — support and privacy
 
-PCBPad is a native PCB design app for iPad and Mac. It reads and writes KiCad files
-directly, and everything it does happens on your device.
+The website for PCBPad, a native PCB editor for iPad and Mac:
+<https://looollo.github.io/pcbpad-support/>
 
-## Getting help
+- Support: <https://looollo.github.io/pcbpad-support/support.html>
+- Privacy policy: <https://looollo.github.io/pcbpad-support/privacy.html>
+- Contact: pcbpad.app@gmail.com · [r/PCBPad](https://www.reddit.com/r/PCBPad/)
 
-- **Email:** [lolojdard@gmail.com](mailto:lolojdard@gmail.com)
-- **Bug reports and feature requests:** [open an issue](https://github.com/LOOOLLO/pcbpad-support/issues)
+Bug reports and feature requests are also welcome as
+[issues](https://github.com/LOOOLLO/pcbpad-support/issues).
 
-Please include your iPadOS or macOS version, and — if it helps — the board file you
-were working on.
-
-## Privacy
-
-See the [privacy policy](privacy.md).
+Static HTML, no scripts, no cookies, nothing loaded from other servers.

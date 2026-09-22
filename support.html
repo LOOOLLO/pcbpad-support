@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PCBPad Support</title>
+<meta name="description" content="How to reach the PCBPad developer, what to include in a bug report, and answers to common questions.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="brand" href="index.html">PCBPad</a>
+  <nav aria-label="Site">
+    <a href="support.html" aria-current="page">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="#it" hreflang="it">Italiano</a>
+  </nav>
+</header>
+
+<main>
+  <p class="label">Support</p>
+  <h1>Write to a person, not a ticket system.</h1>
+  <p class="lede">PCBPad is made by one developer. Every message is read, usually within a
+  few days.</p>
+
+  <dl class="facts">
+    <dt>Email</dt>
+    <dd><span class="mono">pcbpad.app@gmail.com</span>, or the Feedback button on the app's
+    home screen, which opens your Mail app with a message addressed to us.</dd>
+    <dt>Community</dt>
+    <dd><a href="https://www.reddit.com/r/PCBPad/">r/PCBPad</a>: release notes, known issues,
+    and questions others have already asked.</dd>
+  </dl>
+
+  <h2>What to include in a bug report</h2>
+  <ul class="plain">
+    <li>Your iPad or Mac model and the system version.</li>
+    <li>Your Apple Pencil model, or "no Pencil".</li>
+    <li>The app version, as shown on the app's page in the App Store or TestFlight.</li>
+    <li>What you did, what you expected, what happened. A screen recording helps most.</li>
+    <li>If you can share it, the <span class="mono">.kicad_pcb</span> or
+    <span class="mono">.kicad_sch</span> file. It is used only to reproduce the problem and
+    deleted when you ask.</li>
+  </ul>
+  <p class="note">The most valuable report: you saved a file in PCBPad, compared it with the
+  original (for example with <span class="mono">git diff</span>), and something changed that
+  you did not change.</p>
+
+  <h2>Common questions</h2>
+
+  <h3>How do I open my own project?</h3>
+  <p>Copy the project folder to your iPad (iCloud Drive, AirDrop, or a USB drive), then use
+  the open command at the top left of the app, or tap the <span class="mono">.kicad_pcb</span>
+  file in the Files app. Opening the whole folder lets PCBPad also find the schematic and the
+  project rules next to the board.</p>
+
+  <h3>I don't have an Apple Pencil. Can I draw?</h3>
+  <p>Yes. When the app hasn't seen a Pencil, the board offers to let you draw with one
+  finger. You can also choose it in Settings › Preferences › drawing with fingers. Then one
+  finger draws, two fingers pan, and pinching zooms. On Mac, drag with the pointer to draw
+  and scroll to pan.</p>
+
+  <h3>Will KiCad open the files I save?</h3>
+  <p>That is the point of the app: it saves the same file format and rewrites only what you
+  changed. It has been tested on real projects, including the KiCad 10 format. If a file
+  comes back different, please send it.</p>
+
+  <h3>How do I undo?</h3>
+  <p>Tap with two fingers to undo and with three to redo. Hold one finger still for the
+  radial menu.</p>
+
+  <h3>Where are my files?</h3>
+  <p>Files you opened stay where they were. Boards you create in the app are in the Files
+  app, under PCBPad. Nothing is stored on a server.</p>
+
+  <h3>Does it cost anything?</h3>
+  <p>PCBPad is free during the preview, and the pricing isn't decided yet. If a paid plan
+  ever comes, opening your boards, viewing them in 2D and 3D, and checking them with the
+  design rules and the ratsnest will stay free.</p>
+
+  <h3>Is this an official KiCad app?</h3>
+  <p>No. PCBPad is an independent app that reads and writes the KiCad file formats and ships
+  copies of the official KiCad libraries, credited in Settings. Please send questions about
+  PCBPad to the address above, not to the KiCad project.</p>
+
+  <section class="it" id="it" lang="it">
+    <h2>In italiano</h2>
+    <p>PCBPad la fa un solo sviluppatore, e ogni messaggio viene letto. Scrivi a
+    <span class="mono">pcbpad.app@gmail.com</span> o usa il pulsante Feedback nella home
+    dell'app; le novità e i problemi noti stanno su
+    <a href="https://www.reddit.com/r/PCBPad/">r/PCBPad</a>.</p>
+    <p><strong>In una segnalazione</strong> servono: modello di iPad o Mac e versione del
+    sistema, modello della Apple Pencil (o «senza Pencil»), versione dell'app, che cosa hai
+    fatto e che cosa è successo, e se puoi il file. La segnalazione più preziosa: hai salvato
+    un file con PCBPad, l'hai confrontato con l'originale e qualcosa che non avevi toccato è
+    cambiato.</p>
+    <p><strong>Senza Apple Pencil</strong> la scheda ti propone di disegnare con un dito; lo
+    trovi anche in Impostazioni › Preferenze › disegnare con le dita. Tocco a due dita per
+    annullare, a tre per ripristinare.</p>
+    <p><strong>PCBPad non è un'app ufficiale di KiCad</strong>: è un'app indipendente che
+    legge e scrive i suoi formati.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <nav aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://www.reddit.com/r/PCBPad/">r/PCBPad</a>
+  </nav>
+  <p>KiCad is a trademark of the Linux Foundation. PCBPad is an independent app and is not
+  made by, endorsed by or affiliated with the KiCad project.</p>
+</footer>
+
+</div>
+</body>
+</html>

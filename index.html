@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PCBPad</title>
+<meta name="description" content="A native PCB editor for iPad and Mac, built around Apple Pencil. Offline, no account, your files stay on your device. Opens and saves .kicad_pcb and .kicad_sch files.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="brand" href="index.html">PCBPad</a>
+  <nav aria-label="Site">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="#it" hreflang="it">Italiano</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Route circuit boards with Apple Pencil.</h1>
+  <p class="lede">PCBPad is a native PCB editor for iPad and Mac. Draw from pad to pad and
+  the stroke becomes a clean track; the tracks in the way move aside. It works offline,
+  needs no account, and keeps your files on your device.</p>
+
+  <div class="actions">
+    <a class="button primary" href="https://www.reddit.com/r/PCBPad/">Beta and news on r/PCBPad</a>
+  </div>
+  <p class="fine">Coming soon to the App Store. iPad with iPadOS 18 or later, or a Mac with Apple silicon. Apple Pencil is
+  optional: without it, one finger draws.</p>
+
+  <figure class="route">
+    <div class="plate">
+      <svg viewBox="0 0 640 250" role="img" aria-labelledby="fig-title">
+        <title id="fig-title">A hand-drawn stroke between two pads, the 45-degree copper track it becomes, and a neighbouring track moved aside.</title>
+        <defs>
+          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="1.2" class="fig-dot"/>
+          </pattern>
+        </defs>
+        <rect width="640" height="250" fill="url(#grid)"/>
+        <path class="fig-ghost" d="M340 56 H620"/>
+        <path class="fig-moved" d="M340 56 H362 L386 32 H574 L598 56 H620"/>
+        <circle class="fig-via" cx="340" cy="56" r="9"/>
+        <circle class="fig-via" cx="620" cy="56" r="9"/>
+        <path class="fig-track" d="M80 200 H200 L320 80 H560"/>
+        <path class="fig-hand" d="M80 200 C 150 206, 188 192, 236 152 S 322 90, 398 85 S 516 74, 560 80"/>
+        <rect class="fig-pad" x="62" y="180" width="36" height="40" rx="6"/>
+        <rect class="fig-pad" x="542" y="60" width="36" height="40" rx="6"/>
+      </svg>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span class="l-hand">your stroke</span>
+      <span class="l-copper">the track it becomes</span>
+      <span class="l-moved">a track of another net, moved aside</span>
+    </div>
+    <figcaption>One stroke, pad to pad: a 0.25 mm track with 45° corners, snapped to the
+    grid. The track above keeps its clearance by ramping out of the way; copper that cannot
+    move is routed around.</figcaption>
+  </figure>
+
+  <h2>Why it's different</h2>
+  <div class="three">
+    <div>
+      <h3>Drawn, not clicked</h3>
+      <p>The Pencil draws and your fingers navigate. The clean-up follows your hand, is
+      checked against pads, holes and keepouts, and tells you if it still touches one.</p>
+    </div>
+    <div>
+      <h3>Private by design</h3>
+      <p>No account, no login, no server, no analytics. The app makes no network requests.
+      Your boards never leave the device unless you send them.</p>
+    </div>
+    <div>
+      <h3>Your KiCad files</h3>
+      <p>It opens and saves <span class="mono">.kicad_pcb</span> and
+      <span class="mono">.kicad_sch</span> directly. Only the bytes you change are
+      rewritten, so the file goes back to KiCad as it was, plus your edits.</p>
+    </div>
+  </div>
+
+  <h2>What it does</h2>
+  <div class="columns">
+    <div>
+      <h3>Route</h3>
+      <ul class="plain">
+        <li>Tracks from strokes, on the grid, at 45°</li>
+        <li>Push and shove, and routing around what cannot move</li>
+        <li>Differential pairs from one stroke, serpentine length tuning</li>
+        <li>Vias, including blind and buried</li>
+      </ul>
+      <h3>Start a board</h3>
+      <ul class="plain">
+        <li>Outline by stroke, then corrected with numbers; DXF import</li>
+        <li>1,901 footprints and 15,123 symbols from the official libraries, offline</li>
+        <li>Nets declared by tapping two pads, and a ratsnest of what is left</li>
+        <li>Copper pours with a real fill, via stitching, keepouts, text, logos, dimensions</li>
+        <li>A footprint editor for the part no library has</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Schematic</h3>
+      <ul class="plain">
+        <li>Wires that stay attached when parts move</li>
+        <li>Multi-unit parts, hierarchical sheets, a symbol editor</li>
+        <li>Compare schematic and board, apply after a preview</li>
+      </ul>
+      <h3>Check and make</h3>
+      <ul class="plain">
+        <li>Design rules as formulas, with limits from three fabricators' published capabilities</li>
+        <li>3D view, STEP and STL</li>
+        <li>Gerber X2, Excellon, BOM and pick-and-place in one ZIP, read back and previewed before you send it</li>
+        <li>Panels of several boards</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Price</h2>
+  <p>PCBPad is free during the preview, and the pricing isn't decided yet. If a paid plan
+  ever comes, opening your boards, viewing them in 2D and 3D, and checking them with the
+  design rules and the ratsnest will stay free. And your work is always in standard KiCad
+  files, never locked inside the app.</p>
+
+  <h2>Honest limits</h2>
+  <ul class="plain">
+    <li>The 3D view shows component bodies as blocks sized from the package name, not real models.</li>
+    <li>Board text uses a public-domain stroke font, so it does not match KiCad glyph for glyph.</li>
+    <li>There is no autorouter, and none is planned.</li>
+    <li>Always open the manufacturing files in your fabricator's viewer before you order.</li>
+  </ul>
+
+  <section class="it" id="it" lang="it">
+    <h2>In italiano</h2>
+    <p><strong>PCBPad è un editor di circuiti stampati nativo per iPad e Mac, pensato per la
+    Apple Pencil.</strong> Disegni da piazzola a piazzola e il tratto diventa una pista
+    pulita a 45°; le piste in mezzo si scostano. Funziona offline, non chiede un account e
+    tiene i file sul tuo dispositivo. Apre e salva direttamente i file
+    <span class="mono">.kicad_pcb</span> e <span class="mono">.kicad_sch</span>,
+    riscrivendo solo i byte che cambi. L'app è anche in italiano.</p>
+    <p>È gratuita durante l'anteprima, e il prezzo non è ancora deciso. Se un giorno arriverà
+    un piano a pagamento, aprire le proprie schede, guardarle in 2D e in 3D e controllarle
+    con le regole di progetto e il ratsnest resterà gratis; e il lavoro sta sempre in normali
+    file KiCad, mai chiuso dentro l'app.</p>
+    <p>In arrivo sull'App Store; beta e novità su <a href="https://www.reddit.com/r/PCBPad/">r/PCBPad</a> ·
+    <a href="support.html#it">Assistenza</a> · <a href="privacy.html#it">Privacy</a></p>
+  </section>
+</main>
+
+<footer class="site">
+  <nav aria-label="Footer">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://www.reddit.com/r/PCBPad/">r/PCBPad</a>
+    <span class="mono">pcbpad.app@gmail.com</span>
+  </nav>
+  <p>KiCad is a trademark of the Linux Foundation. PCBPad is an independent app and is not
+  made by, endorsed by or affiliated with the KiCad project. Apple, iPad, Mac and Apple
+  Pencil are trademarks of Apple Inc.</p>
+  <p>This site sets no cookies and loads nothing from other servers.</p>
+  <p>If you'd like to support development, there is a page on
+  <a href="https://ko-fi.com/pcbpad">Ko-fi</a>. It is a gift, and it unlocks nothing.</p>
+</footer>
+
+</div>
+</body>
+</html>
